@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%load static%} 
+    <link rel="stylesheet" href="{%static 'loginpage/css/hold.css'%}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div class="container1">
+          <div style="text-align: center;">DashBoard</div>
+
+          <div class="containgroups">
+            <div class="insidetable">
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SerialNumber">Sn</th>
+                    <th scope="col" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Doctors">DT</th>
+                    <th scope="col" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email of doctor">ED</th>
+                    <th scope="col" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Patients">PT</th>
+                    <th scope="col" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email of patient">EP</th>
+                  </tr>
+                </thead>
+                
+                {% for values in doctor %}
+                  {%csrf_token%}
+                <tbody>
+                  <tr>
+                    <th scope="row">{{values.firstname}} {{values.lastname}}</th>
+  
+                    <td>{{values.email}}</td>
+                
+  
+                  </tr>
+                </tbody>
+                  {% endfor %}
+                {% for values in doctor %}
+                  {%csrf_token%}
+                <tbody>
+                  <tr>
+                    <th scope="row">{{values.firstname}} {{values.lastname}}</th>
+  
+                    <td>{{values.email}}</td>
+                
+                    <td>{{values.2}}</td>
+          
+                    <td>{{values.3}}</td>
+                    <td>{{values.4}}</td>
+                    <td>{{values.5}}</td>
+                    <td><button type="submit" class="btn btn-primary" id="new" name="{{values.1}}">Join</button></td>
+  
+                  </tr>
+                </tbody>
+                  {% endfor %}
+              </table>
+            </div>
+            
+          </div>
+      </div>
+  </body>
+</html>
