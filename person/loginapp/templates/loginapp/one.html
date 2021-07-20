@@ -12,6 +12,7 @@
 </head>
 <body> 
     <div class="container">
+       <a href="{% url 'loginapp:view'%}"><button class="btn btn-sm btn-primary" style="margin-left: 500px; margin-right: 500px;" >View All</button></a> 
         <form action='/check' method='POST'>
             {%csrf_token%}
             <div class="mb-3">

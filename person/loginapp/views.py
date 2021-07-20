@@ -5,8 +5,6 @@ def index(request):
     return render(request,'loginapp/one.html')
 def success(request):
     request.POST.get('')
-    # print(request.POST.get('password'))
-    #check if person exist already 
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
     username=request.POST.get('username')
@@ -25,5 +23,4 @@ def success(request):
 def view(request):
     doctor=Details.objects.filter(typeofperson='Doctor')
     patient=Details.objects.filter(typeofperson='Patient')
-    print(doctor,patient)
     return render(request,'loginapp/Doctorpatient.html',{'doctor':doctor,'patient':patient})
